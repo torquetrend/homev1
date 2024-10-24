@@ -1,1 +1,22 @@
+# Disable directory browsing
+Options -Indexes
 
+# Protect sensitive files
+<FilesMatch "(config\.php|insert_admin\.php|\.htaccess)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Deny access to the uploads directory
+<Directory "/uploads">
+    Order deny,allow
+    Deny from all
+</Directory>
+
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect all requests to index.php except existing files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
