@@ -1,0 +1,29 @@
+# .gitignore
+
+# Ignore configuration files
+/backend/config.php
+/admin/insert_admin.php
+
+# Ignore uploads directory
+/uploads/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/editor specific directories
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore Composer dependencies if used
+/vendor/
+
+# Ignore environment variable files
+.env
+
+# Ignore backup files
+*.bak
+*.tmp
