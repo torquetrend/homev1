@@ -1,1 +1,377 @@
+/* styles.css */
 
+/* CSS Variables */
+:root {
+    --color-primary: #1e90ff;
+    --color-secondary: #ffffff;
+    --color-error: #ff4d4d;
+    --color-success: #4CAF50;
+    --color-background: #f4f4f4;
+    --color-text: #333333;
+    --font-family: 'Arial', sans-serif;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+.header nav a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding-top: 100px;
+}
+
+/* Articles Section */
+#latest-articles {
+    margin-bottom: 50px;
+}
+
+#latest-articles h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.article-card {
+    background-color: var(--color-secondary);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.article-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 15px;
+}
+
+.article-content h3 {
+    margin-bottom: 10px;
+}
+
+.article-content p {
+    margin-bottom: 15px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: darken(var(--color-primary), 10%);
+}
+
+/* Contact and Subscribe Sections */
+.contact-section,
+.subscribe-section {
+    background-color: var(--color-secondary);
+    padding: 30px 20px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.contact-section h2,
+.subscribe-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--color-primary), 10%);
+}
+
+.response-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    display: none;
+}
+
+.response-message.success {
+    background-color: var(--color-success);
+    color: var(--color-secondary);
+    display: block;
+}
+
+.response-message.error {
+    background-color: var(--color-error);
+    color: var(--color-secondary);
+    display: block;
+}
+
+.response-message.info {
+    background-color: #2196F3;
+    color: var(--color-secondary);
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+    margin-top: 80px;
+}
+
+.admin-dashboard h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.admin-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.admin-dashboard table, 
+.admin-dashboard th, 
+.admin-dashboard td {
+    border: 1px solid #ddd;
+}
+
+.admin-dashboard th, 
+.admin-dashboard td {
+    padding: 12px;
+    text-align: left;
+}
+
+.admin-dashboard tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.btn-error {
+    background-color: var(--color-error);
+    color: var(--color-secondary);
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-error:hover {
+    background-color: darken(var(--color-error), 10%);
+}
+
+/* Forms */
+form {
+    background-color: var(--color-secondary);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: darken(var(--color-primary), 10%);
+}
+
+.error-messages {
+    background-color: var(--color-error);
+    color: var(--color-secondary);
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.error-messages ul {
+    list-style: none;
+}
+
+.error-messages li {
+    margin-bottom: 5px;
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+}
+
+.toast {
+    background-color: var(--color-success);
+    color: var(--color-secondary);
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+}
+
+.toast.error {
+    background-color: var(--color-error);
+}
+
+.toast.success {
+    background-color: var(--color-success);
+}
+
+.toast.info {
+    background-color: #2196F3;
+}
+
+.toast.fade-out {
+    opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header nav {
+        margin-top: 10px;
+    }
+    
+    .articles {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
